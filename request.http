@@ -1,0 +1,12 @@
+###Test Action
+POST http://localhost:4004/job/scheduledCleanUp
+Content-Type:application/json
+
+{}
+
+
+###Package.json credentials backup
+# "credentials": {
+#           "path": "/sap/opu/odata/sap/API_INBOUND_DELIVERY_SRV;v=2",
+#           "destination": "S4HANA_PSD_HTTPS_505_BR_Basic"
+#         }

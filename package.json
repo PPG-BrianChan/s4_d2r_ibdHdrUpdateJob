@@ -1,0 +1,71 @@
+{
+  "name": "s4_d2r_ibdHdrUpdateJob",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/generator": "^3.0.1",
+    "@sap/cds": "^6",
+    "@sap/cloud-sdk-core": "^1.17.2",
+    "@types/express": "^4.17.17",
+    "express": "^4.18.2",
+    "passport": "^0.6.0"
+  },
+  "devDependencies": {
+    "sqlite3": "^5.0.4"
+  },
+  "scripts": {
+    "start": "cds run"
+  },
+  "engines": {
+    "node": "^16.15"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "es2020": true,
+      "node": true,
+      "jest": true,
+      "mocha": true
+    },
+    "globals": {
+      "SELECT": true,
+      "INSERT": true,
+      "UPDATE": true,
+      "DELETE": true,
+      "CREATE": true,
+      "DROP": true,
+      "CDL": true,
+      "CQL": true,
+      "CXL": true,
+      "cds": true
+    },
+    "rules": {
+      "no-console": "off",
+      "require-atomic-updates": "off"
+    }
+  },
+  "cds": {
+    "requires": {
+      "OP_API_INBOUND_DELIVERY_SRV_0002": {
+        "kind": "odata-v2",
+        "model": "srv/external/OP_API_INBOUND_DELIVERY_SRV_0002",
+        "credentials": {
+          "path": "/sap/opu/odata/sap/API_INBOUND_DELIVERY_SRV;v=2",
+          "destination": "S4HANA_PSD_HTTPS_505_BR_Basic"
+        }
+      },
+      "ZAPI_IBDHDRCLEANUPJOB_O2": {
+        "kind": "odata-v2",
+        "model": "srv/external/ZAPI_IBDHDRCLEANUPJOB_O2",
+        "csrf": true,
+        "credentials": {
+          "path": "/sap/opu/odata/sap/ZAPI_IBDHDRCLEANUPJOB_O2",
+          "destination": "S4HANA_PSD_HTTPS_505_BR_Basic"
+        }
+      }
+    }
+  }
+}
